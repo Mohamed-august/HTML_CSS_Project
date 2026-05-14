@@ -289,8 +289,15 @@ Navbar
 }
 .nav-header img
 {
-  width:200px;
+  width:160px;
 
+}
+
+@media screen and (min-width:576px)
+{
+  .nav-header img {
+    width: 200px;
+  }
 }
 
 .nav-btn 
@@ -500,7 +507,7 @@ Recipes
 
 .recipe-img 
 {
-  height:15rem;
+  height:12rem;
   border-radius: var(--borderRadius);
   margin-bottom: 1rem;
 }
@@ -594,7 +601,7 @@ About
   border-radius: var(--borderRadius);
   height: 300px;
 }
-@media screen and (minwidth:992px)
+@media screen and (min-width:992px)
 {
    .about-page{
     grid-template-columns: 1fr 1fr;
@@ -643,19 +650,10 @@ Tags page
 
 .tags-wrapper
 {
-  display:flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   margin-bottom: 30px;
-}
-
-.tags-wrapper .tag1
-{
-   padding:30px 100px;
-}
-
-.tags-wrapper .tag2
-{
-   padding:30px 100px;
 }
 
 .tag1 
@@ -665,7 +663,7 @@ Tags page
   text-align:center;
   color:var(--white);
   transition: var(--transition);
-  padding: 0.75rem 0;
+  padding: 1.5rem 1rem;
 }
 
 .tag1:hover {
@@ -688,7 +686,7 @@ Tags page
   text-align:center;
   color:var(--white);
   transition: var(--transition);
-  padding: 0.75rem 0;
+  padding: 1.5rem 1rem;
 }
 
 .tag2:hover {
@@ -703,12 +701,6 @@ Tags page
 .tag2 h5 
 {
   font-weight: 600;
-}
-@media screen and (min-width:576px)
-{
-  .tags-wrapper{
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media screen and (min-width:992px)
@@ -850,9 +842,17 @@ Single recipe
 
 .two-recipe 
 {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   margin-bottom: 30px;
+}
+
+@media screen and (min-width:576px)
+{
+  .two-recipe {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /*
@@ -866,8 +866,10 @@ Tags meals
 
 .parent-of-meals
 {
-  display:flex;
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
 }
 
 .tags-meals
